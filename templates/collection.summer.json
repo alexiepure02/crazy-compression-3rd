@@ -1,1 +1,177 @@
-{"sections":{"video_fdj9fy":{"type":"video","blocks":{"play_j79kYj":{"type":"play","settings":{}},"heading_tC6kHN":{"type":"heading","settings":{"text":"","heading_tag":"h1"}}},"block_order":["play_j79kYj","heading_tC6kHN"],"settings":{"full_width":true,"allow_transparent_header":false,"autoplay":true,"video_size":"auto","video":"shopify:\/\/files\/videos\/Blue Illustration Happy Fathers Day Instagram Story (1300 x 500 px).mp4","mobile_video":"shopify:\/\/files\/videos\/Blue Illustration Happy Fathers Day Instagram Story (1300 x 500 px).mp4","external_video_url":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}},"image_with_text_overlay_RjwyHx":{"type":"image-with-text-overlay","blocks":{"subheading_nCJjLG":{"type":"subheading","settings":{"text":""}},"heading_Uy3yfy":{"type":"heading","settings":{"text":"","heading_tag":"h1"}},"richtext_HRjmqB":{"type":"richtext","settings":{"content":""}}},"block_order":["subheading_nCJjLG","heading_Uy3yfy","richtext_HRjmqB"],"settings":{"full_width":true,"allow_transparent_header":false,"enable_parallax":false,"image_size":"auto","image":"shopify:\/\/shop_images\/famliy_bd2037a0-0053-4f0e-849b-b750fff7ffcb.png","mobile_image":"shopify:\/\/shop_images\/famliy_4b45edfa-026d-48b4-a294-9ac8bec86bed.png","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","text_color":"#ffffff","overlay_color":"#ffffff","overlay_opacity":0}},"image_with_text_overlay_bqJ4M8":{"type":"image-with-text-overlay","blocks":{"subheading_WVbciK":{"type":"subheading","settings":{"text":""}},"heading_pTtnJf":{"type":"heading","settings":{"text":"","heading_tag":"h1"}},"richtext_U4mi3K":{"type":"richtext","settings":{"content":""}}},"block_order":["subheading_WVbciK","heading_pTtnJf","richtext_U4mi3K"],"disabled":true,"settings":{"full_width":true,"allow_transparent_header":false,"enable_parallax":false,"image_size":"auto","image":"shopify:\/\/shop_images\/Blue_Modern_Gym_Fitness_Website_Landing_Page_Desktop_Prototype_07e9002b-da56-47ba-88ea-983f943a9715.jpg","mobile_image":"shopify:\/\/shop_images\/Blue_Modern_Gym_Fitness_Website_Landing_Page_Desktop_Prototype_6735cc55-101d-495d-9856-7cd2df8212d6.jpg","mobile_text_position":"place-self-center text-center","desktop_text_position":"sm:place-self-center sm:text-center","text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}},"main":{"type":"main-collection","settings":{"products_per_page":50,"products_per_row_mobile":"2","products_per_row_desktop":4,"filter_layout":"sidebar","show_sort_by":true,"show_filters":true,"show_filter_group_name":false,"show_filter_values_count":false,"open_first_filter_group":false}},"banner":{"type":"collection-banner","disabled":true,"settings":{"full_width":true,"allow_transparent_header":true,"enable_parallax":false,"show_collection_title":true,"show_collection_description":true,"show_collection_image":false,"collection_title_size":"h2","image_size":"auto","mobile_text_position":"place-self-start text-start","desktop_text_position":"sm:place-self-start sm:text-start","featured_product":"","featured_product_heading":"Featured product","text_color":"#ffffff","overlay_color":"#000000","overlay_opacity":0}},"17090576115ec1a232":{"type":"apps","disabled":true,"settings":{"full_width":true,"remove_vertical_spacing":false,"remove_horizontal_spacing":false,"background":"","background_gradient":"","text_color":""}}},"order":["video_fdj9fy","image_with_text_overlay_RjwyHx","image_with_text_overlay_bqJ4M8","main","banner","17090576115ec1a232"]}
+{
+  "sections": {
+    "video_fdj9fy": {
+      "type": "video",
+      "blocks": {
+        "play_j79kYj": {
+          "type": "play",
+          "settings": {
+          }
+        },
+        "heading_tC6kHN": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_j79kYj",
+        "heading_tC6kHN"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify:\/\/files\/videos\/Blue Illustration Happy Fathers Day Instagram Story (1300 x 500 px).mp4",
+        "mobile_video": "shopify:\/\/files\/videos\/Blue Illustration Happy Fathers Day Instagram Story (1300 x 500 px).mp4",
+        "external_video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "image_with_text_overlay_RjwyHx": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_nCJjLG": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_Uy3yfy": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_HRjmqB": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_nCJjLG",
+        "heading_Uy3yfy",
+        "richtext_HRjmqB"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/famliy_bd2037a0-0053-4f0e-849b-b750fff7ffcb.png",
+        "mobile_image": "shopify:\/\/shop_images\/famliy_4b45edfa-026d-48b4-a294-9ac8bec86bed.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 0
+      }
+    },
+    "image_with_text_overlay_bqJ4M8": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_WVbciK": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_pTtnJf": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_U4mi3K": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WVbciK",
+        "heading_pTtnJf",
+        "richtext_U4mi3K"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/Blue_Modern_Gym_Fitness_Website_Landing_Page_Desktop_Prototype_07e9002b-da56-47ba-88ea-983f943a9715.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Blue_Modern_Gym_Fitness_Website_Landing_Page_Desktop_Prototype_6735cc55-101d-495d-9856-7cd2df8212d6.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "filter_layout": "sidebar",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_filter_values_count": false,
+        "open_first_filter_group": false
+      }
+    },
+    "banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "collection_title_size": "h2",
+        "image_size": "auto",
+        "mobile_text_position": "place-self-start text-start",
+        "desktop_text_position": "sm:place-self-start sm:text-start",
+        "featured_product": "",
+        "featured_product_heading": "Featured product",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "17090576115ec1a232": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "video_fdj9fy",
+    "image_with_text_overlay_RjwyHx",
+    "image_with_text_overlay_bqJ4M8",
+    "main",
+    "banner",
+    "17090576115ec1a232"
+  ]
+}
