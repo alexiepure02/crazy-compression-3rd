@@ -170,7 +170,98 @@
             visually similar to a variant picker, although it does not share the functionality
           {%- endcomment -%}
 
-          <div class="product-info__product-picker" {{ block.shopify_attributes }}>
+          <style>
+            #{{ block.id }} .c-product-info__product-picker-desktop {
+              display: none;
+            }
+
+            #{{ block.id }} .c-variant-picker__option-values-over {
+              max-height: 136px;
+            }
+
+            #{{ block.id }} .c-variant-picker__option-values-full {
+              max-height: 700px;
+            }
+
+            #{{ block.id }} .c-variant-picker__option-values-mobile {
+              flex-wrap: nowrap !important;
+            }
+
+            #{{ block.id }} .c-variant-picker__show-all {
+              width: fit-content;
+              cursor: pointer;
+            }
+
+            #{{ block.id }} .c-variant-picker__show-all-hide {
+              display: none;
+            }
+
+            #{{ block.id }} .c-variant-picker__show-all-show {
+              display: none;
+            }
+
+            #{{ block.id }} .c-colors-swiper {
+              padding-bottom: 8px;
+              padding-top: 1px;
+            }
+
+            #{{ block.id }} .c-colors-swiper .swiper-wrapper {
+              flex-wrap: nowrap !important;
+              gap: 0;
+              -ms-overflow-style: none;  /* IE and Edge */
+              scrollbar-width: none;  /* Firefox */
+            }
+
+            #{{ block.id }} .c-colors-swiper .swiper-wrapper::-webkit-scrollbar {
+              display: none;
+            }
+
+            #{{ block.id }} .swiper-slide {
+              width: 100% !important;
+              max-width: 60px;
+            }
+
+            #{{ block.id }} .swiper-scrollbar {
+              bottom: 0;
+            }
+
+            #{{ block.id }} .c-show-desktop {
+              display: none;
+            }
+
+            #{{ block.id }} .c-color-swiper-icon-caret {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              z-index: 1;
+              background: rgb(255,255,255);
+              background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%);
+            }
+
+            @media screen and (min-width: 768px) {
+              #{{ block.id }} .c-variant-picker__option-values {
+                overflow-y: hidden;
+                transition: max-height 0.3s linear;
+              }
+
+              #{{ block.id }} .c-show-desktop {
+                display: flex;
+              }
+
+              #{{ block.id }} .c-show-mobile {
+                display: none;
+              }
+
+              #{{ block.id }} .c-variant-picker__show-all-show {
+                display: block;
+              }
+            }
+          </style>
+
+          <div id="{{ block.id }}" class="product-info__product-picker" {{ block.shopify_attributes }}>
             <div class="variant-picker">
               <fieldset class="variant-picker__option">
                 {%- assign metafield_parts = block.settings.option_value_metafield | split: '.' -%}
@@ -186,7 +277,7 @@
                   </div>
                 {%- endif -%}
 
-                <div class="variant-picker__option-values wrap gap-2">
+                <div class=" c-variant-picker__option-values c-show-desktop variant-picker__option-values wrap gap-2">
                   {%- for product_variation in block.settings.products -%}
                     {%- assign value = product_variation.metafields[metafield_namespace][metafield_key].value -%}
 
@@ -234,9 +325,101 @@
                     {%- endcase -%}
                   {%- endfor -%}
                 </div>
+
+                <div class="swiper c-colors-swiper c-show-mobile">
+                  <div class="c-variant-picker__option-values swiper-wrapper variant-picker__option-values wrap gap-2">
+                    {%- for product_variation in block.settings.products -%}
+                      {%- assign value = product_variation.metafields[metafield_namespace][metafield_key].value -%}
+
+                      {%- if product_variation == product -%}
+                        {%- assign selected = true -%}
+                      {%- else -%}
+                        {%- assign selected = false -%}
+                      {%- endif -%}
+
+                      {%- case block.settings.selector_style -%}
+                        {%- when 'swatch' -%}
+                          {%- render 'option-value',
+                            type: 'swatch',
+                            url: product_variation.url,
+                            value: value,
+                            selected: selected
+                          -%}
+
+                        {%- when 'variant_image' -%}
+                          {%- render 'option-value',
+                            type: 'thumbnail',
+                            url: product_variation.url,
+                            value: value,
+                            image: product_variation.featured_media,
+                            selected: selected,
+                            bordered: true,
+                            class: 'swiper-slide'
+                          -%}
+
+                        {%- when 'block' -%}
+                          {%- render 'option-value',
+                            type: 'block',
+                            url: product_variation.url,
+                            value: value,
+                            selected: selected
+                          -%}
+
+                        {%- when 'block_swatch' -%}
+                          {%- render 'option-value',
+                            type: 'block',
+                            url: product_variation.url,
+                            value: value,
+                            selected: selected,
+                            show_swatch: true
+                          -%}
+                      {%- endcase -%}
+                    {%- endfor -%}
+                  </div>
+                  <div class="c-color-swiper-icon-caret">{% render 'c-icon-colors-arrow' %}</div>
+                  <div class="swiper-scrollbar"></div>
+                </div>
+
+                <p class="c-variant-picker__show-all link text-subdued">Show all {{ block.settings.products.count }}</p>
               </fieldset>
             </div>
           </div>
+
+          <script>
+            var swiper = new Swiper('.c-colors-swiper', {
+              slidesPerView: 'auto',
+              freeMode: true,
+              spaceBetween: 8,
+              slidesOffsetAfter: 32,
+              scrollbar: {
+                el: '.swiper-scrollbar',
+              },
+            });
+
+            const showAllButton = document.querySelector('#{{ block.id }} .c-variant-picker__show-all');
+            const valuesGrid = document.querySelector('#{{ block.id }} .c-variant-picker__option-values');
+
+            showAllButton.addEventListener('click', () => {
+              if (!valuesGrid.classList.contains('c-variant-picker__option-values-full')) {
+                valuesGrid.classList.add('c-variant-picker__option-values-full');
+                showAllButton.innerHTML = 'Hide';
+              } else {
+                valuesGrid.classList.remove('c-variant-picker__option-values-full');
+                showAllButton.innerHTML = 'Show all {{ block.settings.products.count }}';
+              }
+            });
+
+            const valuesGridHeight = valuesGrid.clientHeight;
+            const thresholdHeight = 136;
+
+            if (valuesGridHeight <= thresholdHeight) {
+              valuesGrid.classList.remove('c-variant-picker__option-values-over');
+              showAllButton.classList.add('c-variant-picker__show-all-hide');
+            } else {
+              valuesGrid.classList.add('c-variant-picker__option-values-over');
+              showAllButton.classList.add('c-variant-picker__show-all-show');
+            }
+          </script>
         {%- endif -%}
 
       {%- when 'line_item_property' -%}
