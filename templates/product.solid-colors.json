@@ -21,7 +21,8 @@
         "rating": {
           "type": "rating",
           "settings": {
-            "show_empty": false
+            "show_empty": false,
+            "custom_rating": "<div class=\"sendlane-reviews\" sl-product-id=\"{{product.id}}\" sl-type=\"mini\"><\/div>"
           }
         },
         "title": {
@@ -46,8 +47,8 @@
           "type": "product_variations",
           "settings": {
             "option_name": "Color",
-            "option_value_metafield": "{{ product.metafields.custom.product_value_ccotc.value }}",
-            "products": "{{ product.metafields.custom.product_variation_ccotc.value }}",
+            "option_value_metafield": "{{ product.metafields.custom.product_value_solid_colors.value }}",
+            "products": "{{ product.metafields.custom.product_variation_solid_colors.value }}",
             "selector_style": "swatch"
           }
         },
@@ -157,6 +158,12 @@
     "custom_liquid_QP78TF": {
       "type": "c-vidjet-videos",
       "settings": {
+        "bg_color": "#9940b1",
+        "bg_gradient": "radial-gradient(rgba(221, 144, 241, 1), rgba(153, 64, 177, 1) 100%)",
+        "social_proof": "Loved by 320.000+ Happy Customers!",
+        "heading": "The Crazy Compression Effect in Action!",
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     },
     "video_MrPibd": {
