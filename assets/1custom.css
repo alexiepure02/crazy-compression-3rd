@@ -1,0 +1,403 @@
+.c-cart-star-ratings {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.c-cart-stars {
+  display: flex;
+  align-items: center;
+}
+
+.c-cart-rating-text {
+  font-size: 13px;
+}
+
+.c-cart-stars svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (min-width: 700px) {
+
+  .c-cart-star-ratings {
+    gap: 8px;
+  }
+
+  .c-cart-rating-text {
+    font-size: 14px;
+  }
+}
+
+.c-line-item-quantity {
+  border: 1px solid black;
+  border-radius: 12px;
+}
+
+.c-line-item-quantity-trash a {
+  background: none;
+  display: flex;
+}
+
+@media screen and (min-width: 700px) {
+  .c-line-item-quantity-trash svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.quantity-input.c-quantity-input {
+  border-width: 0;
+  width: 32px;
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+.c-cart-quantity-button {
+  padding: 4px 12px;
+}
+
+.c-cart-quantity-price {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.c-cart-title-remove {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.horizontal-product__cta button {
+  /* background-color: rgb(var(--button-background-secondary)); */
+  color: white;
+}
+
+.rp-micro-app-dummy-icon-container {
+  z-index: 990 !important;
+}
+
+.c-checkout-button {
+  background-color: rgb(var(--button-background-secondary)) !important;
+}
+
+.c-cart-payment-logos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.c-cart-payment-logos svg {
+  width: 20px;
+  height: 12px;
+}
+
+@media screen and (min-width: 380px) {
+  
+  .c-cart-payment-logos svg {
+    width: 22px;
+    height: 14px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  
+  .c-cart-payment-logos svg {
+    width: 32px;
+    height: 20px;
+  }
+}
+
+.c-cart-footer {
+  padding: 16
+}
+
+.c-footer-wo-benefits {
+  padding: 16px;
+}
+
+/* Cart Benefits */
+
+.c-cart-benefits {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-top: 1px solid rgb(var(--border-color));
+  border-bottom: 1px solid rgb(var(--border-color));
+}
+
+.c-cart-benefit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.c-cart-benefit-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.c-cart-benefit-text {
+  line-height: normal;
+  font-size: 11px;
+}
+
+
+@media screen and (min-width: 700px) {
+  
+  .c-cart-benefits {
+    padding: 16px; 
+  }
+
+  .c-cart-benefit {
+    gap: 10px;
+  }
+
+  .c-cart-benefit-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .c-cart-benefit-text {
+    font-size: 14px;
+  }
+}
+
+.c-remaining-amount {
+  font-weight: bold;
+  color: rgb(var(--button-background-secondary));
+}
+
+/* Empty Cart */
+
+.c-empty-cart-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-empty-cart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 24px;
+}
+
+.c-empty-cart-button-cards {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, 200px);
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+@media screen and (min-width: 700px) {
+  .c-empty-cart-button-cards {
+    grid-template-rows: repeat(2, 250px);
+  }
+}
+
+.c-empty-cart-button-card {
+  max-width: 200px;
+  height: 100%;
+  max-height: 250px;
+  position: relative;
+  border-radius: 12px;
+  border: 2px solid rgb(153, 64, 177);
+  background-color: white;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  transition: ease-in-out .3s;
+}
+
+.c-empty-cart-button-card:hover > .c-empty-cart-image {
+  transform: scale(1.1);
+}
+
+.c-empty-cart-button-card:hover {
+  border: 5px solid rgb(153, 64, 177);
+}
+
+.c-empty-cart-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(153, 64, 177), rgba(153, 64, 177, 0.8) 21%, rgba(153, 64, 177, 0.0) 27%);
+  z-index: 1;
+}
+
+.c-empty-cart-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: ease-in-out .3s;
+}
+
+.c-empty-cart-text {
+  font-size: 16px;
+  line-height: normal;
+  font-weight: bold;
+  padding: 8px;
+  z-index: 1;
+}
+
+.c-empty-cart-benefits {
+  border: 1px solid rgb(var(--border-color));
+  border-radius: 6px;
+  /* position: absolute;
+  bottom: 0;
+  width: 100%; */
+}
+
+.c-empty-cart-close-button {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  background: white;
+  border-radius: 100px;
+}
+
+@media screen and (min-width: 700px) {
+  .c-empty-cart-close-button {
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.c-empty-cart-description {
+  max-width: 500px;
+}
+
+/* Product variants */
+
+.c-size-guide-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+@media screen and (min-width: 700px) {
+  .c-size-guide-button {
+    font-size: 15px;
+  }
+}
+
+/* Product page price */
+
+.c-price-list {
+  align-items: center !important;
+}
+
+.c-price-savings-label {
+  padding: 4px 12px;
+  background-color: rgb(var(--on-sale-text));
+  color: white;
+  border-radius: 100px;
+}
+
+/* Product image */
+
+.c-product-gallery__media img {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 700px) {
+  .c-product-gallery__media img {
+    max-height: 700px;
+    object-fit: contain;
+  }
+}
+
+/* Videos section PDP */
+
+.vidjet-carousel-items video {
+  border: 5px solid white;
+}
+
+/* Sendlane reviews */
+
+.slr-stars-score__total {
+  font-family: var(--text-font-family) !important;
+}
+
+.product .slr-widget--mini .slr-stars svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.product .slr-stars-score__total {
+  margin-left: 8px !important;
+  font-size: 14px !important;
+}
+
+product-card .slr-widget--mini .slr-stars svg {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+product-card .slr-stars-score__total {
+  font-size: 12px !important;
+  line-height: normal !important;
+  margin-left: 4px !important;
+}
+
+.c-sendlane-reviews .slr-stars svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.c-sendlane-reviews .slr-stars-score__total {
+  font-size: 13px !important;
+  margin-left: 8px !important;
+}
+
+.c-sendlane-reviews .slr-widget {
+  padding: 0 !important;
+}
+
+@media screen and (min-width: 700px) {
+  .c-sendlane-reviews .slr-stars-score__total {
+    font-size: 14px !important;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .product .slr-stars-score__total {
+    font-size: 16px !important;
+  }
+
+  product-card .slr-stars-score__total {
+    margin-left: 8px !important;
+  }
+
+  product-card .slr-stars-score__total {
+    font-size: 16px !important;
+  }
+}
+
+/* Gorgias */
+
+iframe#chat-button {
+  z-index: 1;
+}

@@ -1,0 +1,159 @@
+<style>
+    #{{ section.id }}.c-videos-section {
+      width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background-color: {{ section.settings.bg_color }};
+    background: {{ section.settings.bg_gradient }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  #{{ section.id }} .c-vs-heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #{{ section.id }} .c-vs-heading {
+    text-align: center;
+    color: white;
+  }
+
+  #{{ section.id }} .c-vs-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    border-radius: 100px;
+    border: 2px solid linear-gradient(#9940b1, #411b4b);
+    background-color: #f5ecf7;
+  }
+
+  #{{ section.id }} .c-vs-star-ratings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1px;
+  }
+
+  #{{ section.id }} .c-vs-star-ratings svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  #{{ section.id }} .c-vs-text {
+    font-size: 12px;
+  }
+
+  #{{ section.id }} .vidjet-carousel-wrapper {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 700px) {
+    #{{ section.id }} .c-vs-social-proof {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #{{ section.id }} .c-vs-text {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<div id="{{ section.id }}" class="c-videos-section">
+  <div class="c-vs-heading-container">
+    <div class="c-vs-social-proof">
+      <div class="c-vs-star-ratings">
+        {% for i in (1..5) %}
+          {% render 'c-icon-star' %}
+        {% endfor %}
+      </div>
+      {% if section.settings.social_proof != blank %}
+        <p class="c-vs-text">{{ section.settings.social_proof }}</p>
+      {% endif %}
+    </div>
+    {% if section.settings.heading != blank %}
+      <h2 class="h2 c-vs-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+  </div>
+
+  <div
+    class="vidjet-carousel-wrapper "
+    style="max-height: 445px; margin: 0 16px; height: 100vw; position: relative; overflow: hidden;"
+  >
+    <iframe
+      class="vidjet-embed-iframe"
+      data-vidjet-campaign-id="6904726a-87d7-44e2-9659-cd40a40e0025"
+      src="https://player.vidjet.io/9b37caa1-347d-4e4f-8478-1c4126fb9f7e/6904726a-87d7-44e2-9659-cd40a40e0025"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+      allow="clipboard-read; clipboard-write; fullscreen"
+      frameborder="0"
+    >
+    </iframe>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Vidjet Videos",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#9940b1"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background gradient",
+      "default": "radial-gradient(rgba(221, 144, 241, 1), rgba(153, 64, 177, 1) 100%)"
+    },
+    {
+      "type": "text",
+      "id": "social_proof",
+      "label": "Social proof text",
+      "default": "Loved by 320.000+ Happy Customers!"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Crazy Compression Effect in Action!"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

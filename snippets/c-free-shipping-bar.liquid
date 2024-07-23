@@ -1,0 +1,88 @@
+{%- comment -%}
+  ----------------------------------------------------------------------------------------------------------------------
+  FREE SHIPPING BAR
+  ----------------------------------------------------------------------------------------------------------------------
+
+  Renders the free shipping bar component. It is used on cart page and cart drawer to render the remaining amount before
+  being eligible for free shipping.
+
+  ********************************************
+  Supported variables
+  ********************************************
+
+  * size: accept the value "sm"
+  * background_color
+{%- endcomment -%}
+
+{%- liquid
+  assign calculated_total_price = 0
+
+  for line_item in cart.items
+    if line_item.requires_shipping
+      assign calculated_total_price = calculated_total_price | plus: line_item.final_line_price
+    endif
+  endfor
+
+  # We have to remove the cart level discount from the calculated amount
+
+  assign total_cart_discount = 0
+
+  for discount_application in cart.cart_level_discount_applications
+    assign total_cart_discount = total_cart_discount | plus: discount_application.total_allocated_amount
+  endfor
+
+  assign calculated_total_price = calculated_total_price | minus: total_cart_discount
+
+  assign actual_shipping_threshold = settings.cart_free_shipping_threshold | times: 100.0
+  assign actual_gift_threshold = settings.cart_free_gift_threshold | times: 100.0
+
+  assign remaining_amount_shipping_treshold = actual_shipping_threshold | minus: calculated_total_price
+  assign remaining_amount_gift_treshold = actual_gift_threshold | minus: calculated_total_price
+-%}
+
+{%- if cart.requires_shipping -%}
+  <c-free-shipping-bar
+    class="c-free-shipping-bar free-shipping-bar"
+    threshold1="{{ settings.cart_free_shipping_threshold | times: 100.0 }}"
+    threshold2="{{ settings.cart_free_gift_threshold | times: 100.0 }}"
+    total-price="{{ calculated_total_price }}"
+    reached-gift-message="🥳 Congratulations! You got <span class='c-remaining-amount'>Free Shipping</span> and <span class='c-remaining-amount'>Free Gift!</span>"
+    reached-shipping-message="🎉 Congrats, you got <span class='c-remaining-amount'>Free Shipping!</span> Only <span class='c-remaining-amount'>{{ remaining_amount_gift_treshold | money }}</span> away from <span class='c-remaining-amount'>Free Gift!</span>"
+    unreached-message="You are <span class='c-remaining-amount'>{{ remaining_amount_shipping_treshold | money }}</span> away from <span class='c-remaining-amount'>Free Shipping!</span>"
+    style="background-color: {{ background_color }};"
+  >
+    {%- comment -%}The span below is the placeholder where the content will be inserted in JS{%- endcomment -%}
+    <span>&nbsp;</span>
+
+    <c-progress-bar
+      class="progress-bar"
+      role="progressbar"
+      threshold1="{{ settings.cart_free_shipping_threshold | times: 100.0 }}"
+      threshold2="{{ settings.cart_free_gift_threshold | times: 100.0 }}"
+      aria-valuemin="0"
+      first-render
+      style="--progress: 0"
+    >
+      <div id="c-threshold-icon-1" class="c-threshold-icon">
+        {% render 'c-icon-delivery' %}
+      </div>
+      <div id="c-threshold-icon-2" class="c-threshold-icon">
+        {% render 'c-icon-gift' %}
+      </div>
+      <p class="c-threshold-text">{{ actual_shipping_threshold | money_without_trailing_zeros | replace: ' ', '' }}</p>
+      <p class="c-threshold-text">{{ actual_gift_threshold | money_without_trailing_zeros | replace: ' ', '' }}</p>
+    </c-progress-bar>
+  </c-free-shipping-bar>
+{%- endif -%}
+
+{% comment %}
+  <c-free-shipping-bar
+  class="free-shipping-bar"
+  threshold1="{{ settings.cart_free_shipping_threshold | times: 100.0 }}"
+  threshold2="{{ settings.cart_free_gift_threshold | times: 100.0 }}"
+  total-price="{{ calculated_total_price }}"
+  reached-message="{{ 'cart.free_shipping_bar.limit_reached_html' | t | escape }}"
+  second-message="Second message?"
+  unreached-message="{{ 'cart.free_shipping_bar.limit_unreached_html' | t | escape }}"
+  >
+{% endcomment %}
