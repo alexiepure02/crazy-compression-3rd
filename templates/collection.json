@@ -1,5 +1,47 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
+    "video_q4LXVC": {
+      "type": "video",
+      "blocks": {
+        "play_YbxGgz": {
+          "type": "play",
+          "settings": {
+          }
+        },
+        "heading_DTBEqh": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_YbxGgz",
+        "heading_DTBEqh"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify:\/\/files\/videos\/Happy Feet.mp4",
+        "mobile_video": "shopify:\/\/files\/videos\/Happy Feet.mp4",
+        "external_video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
     "image_with_text_overlay_bqJ4M8": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -91,6 +133,7 @@
     }
   },
   "order": [
+    "video_q4LXVC",
     "image_with_text_overlay_bqJ4M8",
     "main",
     "banner",
