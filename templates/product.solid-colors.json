@@ -46,10 +46,10 @@
         "d0734d67-c3ca-4dc2-a72a-fc5fa7bc5188": {
           "type": "product_variations",
           "settings": {
-            "option_name": "Color",
+            "option_name": "Select Color",
             "option_value_metafield": "{{ product.metafields.custom.product_value_solid_colors.value }}",
             "products": "{{ product.metafields.custom.product_variation_solid_colors.value }}",
-            "selector_style": "swatch"
+            "selector_style": "variant_image"
           }
         },
         "variant_picker": {
