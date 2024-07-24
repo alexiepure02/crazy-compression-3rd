@@ -136,9 +136,6 @@
         "overlay_opacity": 0
       }
     },
-    "custom_liquid_tik8fF": {
-        "type": "c-vidjet-videos"
-    },
     "custom_liquid_QwjJmB": {
       "type": "custom-liquid",
       "settings": {
@@ -293,7 +290,6 @@
   "order": [
     "main",
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2",
-    "custom_liquid_tik8fF",
     "custom_liquid_QwjJmB",
     "346dd38f-3483-455f-9262-e818ad6a56cf",
     "related-products",

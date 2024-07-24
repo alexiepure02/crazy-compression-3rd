@@ -128,9 +128,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_V7mBQD": {
-        "type": "c-vidjet-videos"
-    },
     "custom_liquid_Ha9JY3": {
       "type": "custom-liquid",
       "settings": {
@@ -284,7 +281,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_V7mBQD",
     "custom_liquid_Ha9JY3",
     "346dd38f-3483-455f-9262-e818ad6a56cf",
     "related-products",

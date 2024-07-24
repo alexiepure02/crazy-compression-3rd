@@ -119,9 +119,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_KP8C3t": {
-        "type": "c-vidjet-videos"
-    },
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2": {
       "type": "image-with-text-overlay",
       "disabled": true,
@@ -293,7 +290,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_KP8C3t",
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2",
     "1680883393461ba659",
     "custom_liquid_Ygfwef",

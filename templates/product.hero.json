@@ -128,9 +128,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_Vjk3dx": {
-        "type": "c-vidjet-videos"
-    },
     "video_DHk4Jf": {
       "type": "video",
       "blocks": {
@@ -316,7 +313,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_Vjk3dx",
     "video_DHk4Jf",
     "custom_liquid_fPkUTE",
     "346dd38f-3483-455f-9262-e818ad6a56cf",

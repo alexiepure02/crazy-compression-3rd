@@ -156,9 +156,6 @@
         "overlay_opacity": 0
       }
     },
-    "custom_liquid_FLU3ch": {
-        "type": "c-vidjet-videos"
-    },
     "video_yKP784": {
       "type": "video",
       "blocks": {
@@ -356,7 +353,6 @@
   "order": [
     "main",
     "fb42f947-2382-4ed7-8336-1d42d54dc8cc",
-    "custom_liquid_FLU3ch",
     "video_yKP784",
     "17174421514e8e0f8d",
     "custom_liquid_VGKgMy",

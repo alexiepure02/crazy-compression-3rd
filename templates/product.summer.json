@@ -193,9 +193,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_eUUAJp": {
-        "type": "c-vidjet-videos"
-    },
     "custom_liquid_eDFxEH": {
       "type": "custom-liquid",
       "settings": {
@@ -591,7 +588,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_eUUAJp",
     "custom_liquid_eDFxEH",
     "image_with_text_overlay_BpkrA4",
     "image_with_text_overlay_jFqtWw",

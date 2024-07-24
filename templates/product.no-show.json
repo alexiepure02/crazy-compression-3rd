@@ -129,9 +129,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_9fGdD7": {
-        "type": "c-vidjet-videos"
-    },
     "346dd38f-3483-455f-9262-e818ad6a56cf": {
       "type": "faq",
       "blocks": {
@@ -273,7 +270,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_9fGdD7",
     "346dd38f-3483-455f-9262-e818ad6a56cf",
     "related-products",
     "1680883393461ba659",

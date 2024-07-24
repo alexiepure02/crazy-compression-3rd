@@ -122,9 +122,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_PqJFan": {
-        "type": "c-vidjet-videos"
-    },
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2": {
       "type": "image-with-text-overlay",
       "disabled": true,
@@ -317,7 +314,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_PqJFan",
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2",
     "video_L6t7mi",
     "custom_liquid_RUaHAV",

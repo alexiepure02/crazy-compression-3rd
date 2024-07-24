@@ -145,9 +145,6 @@
         "overlay_opacity": 0
       }
     },
-    "custom_liquid_hCXrQ9": {
-        "type": "c-vidjet-videos"
-    },
     "video_mbmmf3": {
       "type": "video",
       "blocks": {
@@ -345,7 +342,6 @@
   "order": [
     "main",
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2",
-    "custom_liquid_hCXrQ9",
     "video_mbmmf3",
     "171744218373d10874",
     "custom_liquid_JJhQEa",

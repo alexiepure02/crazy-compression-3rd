@@ -119,9 +119,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_bf7C7f": {
-        "type": "c-vidjet-videos"
-    },
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2": {
       "type": "image-with-text-overlay",
       "disabled": true,
@@ -292,7 +289,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_bf7C7f",
     "0f0e296f-bf2f-49a6-8db9-be5412a17cf2",
     "custom_liquid_PxiFax",
     "346dd38f-3483-455f-9262-e818ad6a56cf",

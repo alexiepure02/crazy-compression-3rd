@@ -129,9 +129,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_FXbTHi": {
-        "type": "c-vidjet-videos"
-    },
     "custom_liquid_VQNB3Q": {
       "type": "custom-liquid",
       "settings": {
@@ -285,7 +282,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_FXbTHi",
     "custom_liquid_VQNB3Q",
     "346dd38f-3483-455f-9262-e818ad6a56cf",
     "related-products",

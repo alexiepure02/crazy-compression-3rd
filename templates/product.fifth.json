@@ -128,9 +128,6 @@
         "input_text_color": ""
       }
     },
-    "custom_liquid_HcnBNB": {
-        "type": "c-vidjet-videos"
-    },
     "video_gRTfLH": {
       "type": "video",
       "blocks": {
@@ -327,7 +324,6 @@
   },
   "order": [
     "main",
-    "custom_liquid_HcnBNB",
     "video_gRTfLH",
     "17174420157703426e",
     "1680883393461ba659",
