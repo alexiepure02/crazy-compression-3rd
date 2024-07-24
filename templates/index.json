@@ -15,8 +15,8 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/1_35350787-65c4-4e83-b910-8ef1f4f8174b.png",
-            "mobile_image": "shopify:\/\/shop_images\/Copy_of_Untitled_1200_x_1600_px_1200_x_1700_px_f971a1c0-6edc-48d6-90f7-bccf0bd7f31d.png",
+            "image": "shopify:\/\/shop_images\/homepage_hero_desktop.png",
+            "mobile_image": "shopify:\/\/shop_images\/homepage_hero_mobile.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-start sm:text-start",
