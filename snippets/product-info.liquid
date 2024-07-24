@@ -171,16 +171,22 @@
           {%- endcomment -%}
 
           <style>
+            #{{ block.id }} {
+              --c-swatch-width: 55px;
+              --c-swatch-height: 82.5px;
+              --c-swatch-container-max-height: calc(var(--c-swatch-height) * 2 + 16px);
+            }
+
             #{{ block.id }} .c-product-info__product-picker-desktop {
               display: none;
             }
 
             #{{ block.id }} .c-variant-picker__option-values-over {
-              max-height: 136px;
+              max-height: var(--c-swatch-container-max-height);
             }
 
             #{{ block.id }} .c-variant-picker__option-values-full {
-              max-height: 700px;
+              max-height: 600px;
             }
 
             #{{ block.id }} .c-variant-picker__option-values-mobile {
@@ -218,7 +224,7 @@
 
             #{{ block.id }} .swiper-slide {
               width: 100% !important;
-              max-width: 60px;
+              max-width: var(--c-swatch-width);
             }
 
             #{{ block.id }} .swiper-scrollbar {
@@ -241,10 +247,16 @@
               background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 75%);
             }
 
+            #{{ block.id }} .thumbnail-swatch {
+              height: var(--c-swatch-height);
+              width: var(--c-swatch-width);
+            }
+
             @media screen and (min-width: 768px) {
               #{{ block.id }} .c-variant-picker__option-values {
                 overflow-y: hidden;
                 transition: max-height 0.3s linear;
+                padding-top: 1px;
               }
 
               #{{ block.id }} .c-show-desktop {
@@ -399,6 +411,18 @@
             const showAllButton = document.querySelector('#{{ block.id }} .c-variant-picker__show-all');
             const valuesGrid = document.querySelector('#{{ block.id }} .c-variant-picker__option-values');
 
+            const valuesGridHeight = valuesGrid.clientHeight;
+            const thresholdHeight = 181;
+
+            if (valuesGridHeight <= thresholdHeight) {
+              valuesGrid.classList.remove('c-variant-picker__option-values-over');
+              showAllButton.classList.add('c-variant-picker__show-all-hide');
+            } else {
+              console.log('asdfasdfasdf');
+              valuesGrid.classList.add('c-variant-picker__option-values-over');
+              showAllButton.classList.add('c-variant-picker__show-all-show');
+            }
+
             showAllButton.addEventListener('click', () => {
               if (!valuesGrid.classList.contains('c-variant-picker__option-values-full')) {
                 valuesGrid.classList.add('c-variant-picker__option-values-full');
@@ -408,17 +432,6 @@
                 showAllButton.innerHTML = 'Show all {{ block.settings.products.count }}';
               }
             });
-
-            const valuesGridHeight = valuesGrid.clientHeight;
-            const thresholdHeight = 136;
-
-            if (valuesGridHeight <= thresholdHeight) {
-              valuesGrid.classList.remove('c-variant-picker__option-values-over');
-              showAllButton.classList.add('c-variant-picker__show-all-hide');
-            } else {
-              valuesGrid.classList.add('c-variant-picker__option-values-over');
-              showAllButton.classList.add('c-variant-picker__show-all-show');
-            }
           </script>
         {%- endif -%}
 
