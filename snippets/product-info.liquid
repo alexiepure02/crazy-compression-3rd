@@ -186,14 +186,6 @@
               height: var(--c-swatch-height);
               width: var(--c-swatch-width);
             }
-
-            @media screen and (min-width: 768px) {
-              #{{ block.id }} .c-variant-picker__option-values {
-                overflow-y: hidden;
-                transition: max-height 0.3s linear;
-                padding-top: 1px;
-              }
-            }
           </style>
 
           <div id="{{ block.id }}" class="product-info__product-picker" {{ block.shopify_attributes }}>
@@ -238,7 +230,10 @@
                           value: value,
                           image: product_variation.featured_media,
                           selected: selected,
-                          bordered: true
+                          bordered: true,
+                          show_tooltip: true,
+                          name: product_variation.title
+
                         -%}
 
                       {%- when 'block' -%}
@@ -259,6 +254,29 @@
                         -%}
                     {%- endcase -%}
                   {%- endfor -%}
+                  <script>
+                    let firstHover = false;
+                    let currentImageUrl = "";
+
+                    function updateImageOnMouseEnter(imageUrl) {
+                      const productImage = document.querySelector(".c-product-gallery__media.is-selected img")
+                      if (!firstHover) { 
+                        currentImageUrl = productImage.src;
+                        firstHover = true;
+                      }
+                      productImage.src = imageUrl;
+                      productImage.srcset = "";
+                    }
+
+                    function updateImageOnMouseLeave(imageUrl) {
+                      setTimeout(() => {
+                        const productImage = document.querySelector(".c-product-gallery__media.is-selected img")
+                        if (productImage.src != currentImageUrl && productImage.src.includes(imageUrl)) {
+                          productImage.src = currentImageUrl;
+                        }
+                      }, 500)
+                    }
+                  </script>
                 </div>
               </fieldset>
             </div>

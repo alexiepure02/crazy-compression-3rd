@@ -1,45 +1,45 @@
 {%- comment -%}
-----------------------------------------------------------------------------------------------------------------------
-OPTION VALUE
-----------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------
+  OPTION VALUE
+  ----------------------------------------------------------------------------------------------------------------------
 
-This component renders a single option value. It is a generic component that is used both on product and collection
-pages (for metaobject filtering). It ca be used to render a swatch, a block or a thumbnail.
+  This component renders a single option value. It is a generic component that is used both on product and collection
+  pages (for metaobject filtering). It ca be used to render a swatch, a block or a thumbnail.
 
-********************************************
-Supported variables
-********************************************
+  ********************************************
+  Supported variables
+  ********************************************
 
 
-* type: control the presentational type of the swatch. Can be "swatch", "block" or "thumbnail". [REQUIRED]
-* value: the value submitted to the server [REQUIRED]
-* name: the name attribute when field is submitted to the server [REQUIRED]
-* selected: if set to true, this swatch is preselected
-* allow_multiple: if set to true, it allows several values to be selected (by using a checkbox instead of radio)
-* label: an optional label to show as tooltip (if no provided, it uses the value)
-* form: the form ID that this swatch is linked to
-* disabled: if set to true, this swatch is disabled
-* url: if defined, option value will be used as a plain link tag instead of an input.
-* class: extra classes.
+  * type: control the presentational type of the swatch. Can be "swatch", "block" or "thumbnail". [REQUIRED]
+  * value: the value submitted to the server [REQUIRED]
+  * name: the name attribute when field is submitted to the server [REQUIRED]
+  * selected: if set to true, this swatch is preselected
+  * allow_multiple: if set to true, it allows several values to be selected (by using a checkbox instead of radio)
+  * label: an optional label to show as tooltip (if no provided, it uses the value)
+  * form: the form ID that this swatch is linked to
+  * disabled: if set to true, this swatch is disabled
+  * url: if defined, option value will be used as a plain link tag instead of an input.
+  * class: extra classes.
 
-Thumbnail specific parameters:
+  Thumbnail specific parameters:
 
-* image: the image to use
-* size: can be 'sm' to make it smaller
-* bordered: if set to true, a border is added when the image is not selected
+  * image: the image to use
+  * size: can be 'sm' to make it smaller
+  * bordered: if set to true, a border is added when the image is not selected
 
-Block swatch specific parameters
+  Block swatch specific parameters
 
-* show_swatch: if set to true, show the color as a small tile.
-* color: a single color drop (used for product color swatches)
-* colors: an optional list of color drop (if not set, the theme will use the config based approach as a fallback). When more
-          than one color is given, a conic gradient is generated. It supports up to 4 colors.
-* image: an optional image used as the background (if not set, the theme will use the config based approach as a fallback)
+  * show_swatch: if set to true, show the color as a small tile.
+  * color: a single color drop (used for product color swatches)
+  * colors: an optional list of color drop (if not set, the theme will use the config based approach as a fallback). When more
+            than one color is given, a conic gradient is generated. It supports up to 4 colors.
+  * image: an optional image used as the background (if not set, the theme will use the config based approach as a fallback)
 
-Color swatch specific parameters:
+  Color swatch specific parameters:
 
-* show_tooltip: if set to true, display a tooltip on hover
-* swatch: a swatch drop that can contain either an image or a color
+  * show_tooltip: if set to true, display a tooltip on hover
+  * swatch: a swatch drop that can contain either an image or a color
 {%- endcomment -%}
 
 {%- capture id -%}option-value-{{ section.id }}-{{ form }}-{{ context }}-{{ name | handle }}-{{ value | handle }}{%- endcapture -%}
@@ -82,23 +82,60 @@ Color swatch specific parameters:
 -%}
 
 {%- unless url -%}
-  <input class="sr-only" type="{% if allow_multiple %}checkbox{% else %}radio{% endif %}" name="{{ name }}" {% if form %}form="{{ form | escape }}"{% endif %} id="{{ id | escape }}" value="{{ value | escape }}" {% if disabled %}disabled{% endif %} {% if selected %}checked="checked"{% endif %}>
+  <input
+    class="sr-only"
+    type="{% if allow_multiple %}checkbox{% else %}radio{% endif %}"
+    name="{{ name }}"
+    {% if form %}
+      form="{{ form | escape }}"
+    {% endif %}
+    id="{{ id | escape }}"
+    value="{{ value | escape }}"
+    {% if disabled %}
+      disabled
+    {% endif %}
+    {% if selected %}
+      checked="checked"
+    {% endif %}
+  >
 {%- endunless -%}
 
 {%- case type -%}
   {%- when 'thumbnail' -%}
     {%- if image != blank -%}
       {%- capture thumbnail_markup -%}
-        <span class="sr-only">{{ label | default: value }}</span>
+        <span class="sr-only"
+        {% if show_tooltip %}
+          data-tooltip="{{ name | escape }}"
+        {% endif %}
+        onmouseenter="updateImageOnMouseEnter('{{ image | image_url: width: image.width }}')"
+        onmouseleave="updateImageOnMouseLeave('{{ image | image_url: width: image.width }}')">{{ label | default: value }}</span>
         {{- image | image_url: width: image.width | image_tag: sizes: '60px', widths: '60,120', class: 'object-cover' -}}
       {%- endcapture -%}
 
       {%- if url -%}
-        <a href="{{ url }}" class="{{ class }} thumbnail-swatch {% if size == 'sm' %}thumbnail-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if bordered %}border{% endif %}">
+        <a
+          href="{{ url }}"
+          class="{{ class }}c-thumbnail-swatch thumbnail-swatch {% if size == 'sm' %}thumbnail-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if bordered %}border{% endif %}"
+          {% if show_tooltip %}
+            data-tooltip="{{ name | escape }}"
+          {% endif %}
+          onmouseenter="updateImageOnMouseEnter('{{ image| image_url: width: image.width  }}')"
+          onmouseleave="updateImageOnMouseLeave('{{ image | image_url: width: image.width }}')"
+        >
           {{- thumbnail_markup -}}
         </a>
       {%- else -%}
-        <label class="{{ class }} thumbnail-swatch {% if size == 'sm' %}thumbnail-swatch--sm{% endif %} {% if bordered %}border{% endif %}" for="{{ id | escape }}" data-option-value>
+        <label
+          class="{{ class }}c-thumbnail-swatch thumbnail-swatch {% if size == 'sm' %}thumbnail-swatch--sm{% endif %} {% if bordered %}border{% endif %}"
+          for="{{ id | escape }}"
+          data-option-value
+          {% if show_tooltip %}
+            data-tooltip="{{ name | escape }}"
+          {% endif %}
+          onmouseenter="updateImageOnMouseEnter('{{ image| image_url: width: image.width  }}')"
+          onmouseleave="updateImageOnMouseLeave('{{ image | image_url: width: image.width }}')"
+        >
           {{- thumbnail_markup -}}
         </label>
       {%- endif -%}
@@ -106,7 +143,14 @@ Color swatch specific parameters:
       {%- if url == blank -%}
         <label class="block-swatch" for="{{ id | escape }}" data-option-value>{{ label | default: value }}</label>
       {%- else -%}
-        <a href="{{ url }}" class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}" for="{{ id | escape }}" data-option-value>{{ label | default: value }}</a>
+        <a
+          href="{{ url }}"
+          class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}"
+          for="{{ id | escape }}"
+          data-option-value
+        >
+          {{- label | default: value -}}
+        </a>
       {%- endif -%}
     {%- endif -%}
 
@@ -123,7 +167,10 @@ Color swatch specific parameters:
     {%- endcapture -%}
 
     {%- if url -%}
-      <a href="{{ url }}" class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}">
+      <a
+        href="{{ url }}"
+        class="block-swatch {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %}"
+      >
         {{- block_markup -}}
       </a>
     {%- else -%}
@@ -137,11 +184,26 @@ Color swatch specific parameters:
     {%- assign value_downcase = value | downcase -%}
 
     {%- if url -%}
-      <a href="{{ url }}" class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if white_label_list contains value_downcase %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}" {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}">
+      <a
+        href="{{ url }}"
+        class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if disabled %}is-disabled{% endif %} {% if selected %}is-selected{% endif %} {% if white_label_list contains value_downcase %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}"
+        {% if show_tooltip %}
+          data-tooltip="{{ label | default: value | escape }}"
+        {% endif %}
+        style="{{ swatch_style }}"
+      >
         <span class="sr-only">{{ label | default: value }}</span>
       </a>
     {%- else -%}
-      <label class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if white_label_list contains value_downcase %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}" for="{{ id | escape }}" data-option-value {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}">
+      <label
+        class="color-swatch {% if settings.color_swatch_style == 'rectangle' %}color-swatch--rectangle{% endif %} {% if size == 'sm' %}color-swatch--sm{% endif %} {% if white_label_list contains value_downcase %}ring-inset{% endif %} {% if settings.color_swatch_style == 'round' %}rounded-full{% endif %}"
+        for="{{ id | escape }}"
+        data-option-value
+        {% if show_tooltip %}
+          data-tooltip="{{ label | default: value | escape }}"
+        {% endif %}
+        style="{{ swatch_style }}"
+      >
         <span class="sr-only">{{ label | default: value }}</span>
       </label>
     {%- endif -%}
