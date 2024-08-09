@@ -318,13 +318,14 @@
 /* Product image */
 
 .c-product-gallery__media img {
-  max-height: 400px;
+  max-height: 350px;
   object-fit: contain;
+  width: fit-content;
 }
 
 @media screen and (min-width: 700px) {
   .c-product-gallery__media img {
-    max-height: 700px;
+    max-height: 600px;
     object-fit: contain;
   }
 }
@@ -400,4 +401,44 @@ product-card .slr-stars-score__total {
 
 iframe#chat-button {
   z-index: 1;
+}
+
+/* Collapsible tabs */
+
+.icon-container {
+  gap: 8px;
+}
+
+.icon-item p {
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 700px) {
+  .icon-item i {
+    font-size: 50px !important;
+  }
+}
+
+.c-collapsible-tab-heading {
+  font-size: 18px;
+}
+
+.c-collapsible-tab-content {
+  font-size: 15px;
+}
+
+@media screen and (min-width: 700px) {
+  .c-collapsible-tab-heading {
+    font-size: 20px;
+  }
+  
+  .c-collapsible-tab-content {
+    font-size: 16px;
+  }
+}
+
+/* Add to cart Button */
+
+.c-atc-button {
+  font-size: 16px !important;
 }

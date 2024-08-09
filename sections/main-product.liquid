@@ -1,6 +1,16 @@
 {%- render 'section-spacing-collapsing' -%}
 
 <style>
+
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .product-gallery {
+      {% if section.settings.enable_sticky_image %}
+        position: sticky;
+        top: 170px;
+      {% endif %}  
+    }
+  }
+
   #shopify-section-{{ section.id }} {
     --product-grid: auto / minmax(0, 1fr);
     --product-gallery-media-list-grid: auto / auto-flow {% if section.settings.mobile_carousel_control == 'free_scroll' %}{% if section.settings.mobile_media_size == 'expanded' %}84vw{% else %}73vw{% endif %}{% else %}100%{% endif %};
@@ -1227,6 +1237,12 @@
       "type": "checkbox",
       "id": "show_fixed_add_to_cart",
       "label": "Show add to cart on scroll",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_image",
+      "label": "Enable sticky image on scroll",
       "default": true
     },
     {

@@ -1,84 +1,42 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
-    "image_with_text_overlay_xRAdpC": {
-      "type": "image-with-text-overlay",
+    "video_E9NKJT": {
+      "type": "video",
       "blocks": {
-        "subheading_fEh9LD": {
-          "type": "subheading",
+        "play_giEyEF": {
+          "type": "play",
           "settings": {
-            "text": ""
           }
         },
-        "heading_Mqxyxq": {
+        "heading_MRxYAw": {
           "type": "heading",
           "settings": {
             "text": "",
             "heading_tag": "h1"
           }
-        },
-        "richtext_MD8dm4": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
         }
       },
       "block_order": [
-        "subheading_fEh9LD",
-        "heading_Mqxyxq",
-        "richtext_MD8dm4"
+        "play_giEyEF",
+        "heading_MRxYAw"
       ],
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify:\/\/shop_images\/Blue_Illustration_Happy_Fathers_Day_Instagram_Story_1300_x_500_px_d9a4a7f9-71b6-4389-ba2a-8d8432cc05b3.png",
-        "mobile_image": "shopify:\/\/shop_images\/Blue_Illustration_Happy_Fathers_Day_Instagram_Story_1300_x_500_px_39af4644-a17c-41d0-bc25-2df3d9f2e71a.png",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#ffffff",
-        "overlay_opacity": 0
-      }
-    },
-    "image_with_text_overlay_7zD8hn": {
-      "type": "image-with-text-overlay",
-      "blocks": {
-        "subheading_ytkpi7": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_7Ka6cH": {
-          "type": "heading",
-          "settings": {
-            "text": "",
-            "heading_tag": "h1"
-          }
-        },
-        "richtext_NPJ3EB": {
-          "type": "richtext",
-          "settings": {
-            "content": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_ytkpi7",
-        "heading_7Ka6cH",
-        "richtext_NPJ3EB"
-      ],
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify:\/\/shop_images\/Copy_of_famliy.png",
-        "mobile_image": "shopify:\/\/shop_images\/Copy_of_famliy_00d32ba6-9d5f-4d24-ac69-cec3cb19e211.png",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify:\/\/files\/videos\/HALLOWEEN Collection (2160 x 540 px)_3429e476-8d90-4251-b007-6598ad853392.mp4",
+        "mobile_video": "shopify:\/\/files\/videos\/HALLOWEEN Collection (1)_352ad913-6ad6-4b35-a4be-2cfba4e28f03.mp4",
+        "external_video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 0
@@ -129,28 +87,6 @@
     },
     "main": {
       "type": "main-collection",
-      "blocks": {
-        "promotion_image_Wwqc7b": {
-          "type": "promotion_image",
-          "settings": {
-            "position": 4,
-            "column_span": "1",
-            "mobile_image": "shopify:\/\/shop_images\/Blue_Illustration_Happy_Fathers_Day_Instagram_Story_Instagram_Post.png",
-            "title": "",
-            "content": "",
-            "link_url": "",
-            "link_text": "",
-            "heading_tag": "h4",
-            "text_position": "place-self-end-start text-start",
-            "text_color": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "promotion_image_Wwqc7b"
-      ],
       "settings": {
         "products_per_page": 50,
         "products_per_row_mobile": "2",
@@ -165,7 +101,6 @@
     },
     "banner": {
       "type": "collection-banner",
-      "disabled": true,
       "settings": {
         "full_width": true,
         "allow_transparent_header": true,
@@ -183,13 +118,25 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
+    },
+    "17090576115ec1a232": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
-    "image_with_text_overlay_xRAdpC",
-    "image_with_text_overlay_7zD8hn",
+    "video_E9NKJT",
     "image_with_text_overlay_bqJ4M8",
     "main",
-    "banner"
+    "banner",
+    "17090576115ec1a232"
   ]
 }

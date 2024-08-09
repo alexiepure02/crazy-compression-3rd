@@ -1,0 +1,143 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "banner": {
+      "type": "collection-banner",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "collection_title_size": "h2",
+        "image_size": "auto",
+        "mobile_text_position": "place-self-start text-start",
+        "desktop_text_position": "sm:place-self-start sm:text-start",
+        "featured_product": "",
+        "featured_product_heading": "Featured product",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "video_nGKLqQ": {
+      "type": "video",
+      "blocks": {
+        "play_wiLGmE": {
+          "type": "play",
+          "settings": {
+          }
+        },
+        "heading_Vh6h6W": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "play_wiLGmE",
+        "heading_Vh6h6W"
+      ],
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "video_size": "auto",
+        "video": "shopify:\/\/files\/videos\/HALLOWEEN Collection (2160 x 540 px)_3429e476-8d90-4251-b007-6598ad853392.mp4",
+        "mobile_video": "shopify:\/\/files\/videos\/HALLOWEEN Collection (1)_352ad913-6ad6-4b35-a4be-2cfba4e28f03.mp4",
+        "external_video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "image_with_text_overlay_bqJ4M8": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_WVbciK": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_pTtnJf": {
+          "type": "heading",
+          "settings": {
+            "text": "",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_U4mi3K": {
+          "type": "richtext",
+          "settings": {
+            "content": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_WVbciK",
+        "heading_pTtnJf",
+        "richtext_U4mi3K"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify:\/\/shop_images\/Blue_Modern_Gym_Fitness_Website_Landing_Page_Desktop_Prototype_07e9002b-da56-47ba-88ea-983f943a9715.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Blue_Modern_Gym_Fitness_Website_Landing_Page_Desktop_Prototype_6735cc55-101d-495d-9856-7cd2df8212d6.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 50,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "filter_layout": "sidebar",
+        "show_sort_by": true,
+        "show_filters": true,
+        "show_filter_group_name": false,
+        "show_filter_values_count": false,
+        "open_first_filter_group": false
+      }
+    },
+    "17090576115ec1a232": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "video_nGKLqQ",
+    "image_with_text_overlay_bqJ4M8",
+    "main",
+    "17090576115ec1a232"
+  ]
+}
